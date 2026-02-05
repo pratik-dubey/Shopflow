@@ -34,6 +34,7 @@ import { useMergeRefs } from "@/lib/thread-hooks";
 import type { Suggestion } from "@tambo-ai/react";
 import type { VariantProps } from "class-variance-authority";
 import * as React from "react";
+import { CustomThreadSidebar, TamboSidebar } from "@/components/custom/custom-thread-sidebar";
 
 /**
  * Props for the MessageThreadFull component
@@ -58,15 +59,17 @@ export const MessageThreadFull = React.forwardRef<
   const { containerRef, historyPosition } = useThreadContainerContext();
   const mergedRef = useMergeRefs<HTMLDivElement | null>(ref, containerRef);
 
-  const threadHistorySidebar = (
-    <ThreadHistory position={historyPosition}>
-      <ThreadHistoryHeader />
-      <ThreadHistoryNewButton />
-      <ThreadHistorySearch />
-      <ThreadHistoryList />
-    </ThreadHistory>
-  );
-
+  // const threadHistorySidebar = (
+  //   <ThreadHistory position={historyPosition}>
+  //     <ThreadHistoryHeader />
+  //     <ThreadHistoryNewButton />
+  //     <ThreadHistorySearch />
+  //     <ThreadHistoryList />
+  //   </ThreadHistory>
+  // );
+const threadHistorySidebar = (
+  <TamboSidebar position={historyPosition} />
+);
   const defaultSuggestions: Suggestion[] = [
     {
       id: "suggestion-1",
