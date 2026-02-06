@@ -58,26 +58,86 @@ ShopFlow introduces a **conversational commerce paradigm** where users can:
 
 ## 📁 Project Structure
 shopflow/
+├── public/                          # Static assets
+│   ├── shopflow-banner.svg
+│   ├── Octo-Icon.svg
+│   └── Tambo-Lockup.svg
+│
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx              # Landing page
-│   │   ├── layout.tsx            # Root layout
-│   │   ├── dashboard/
-│   │   │   └── page.tsx          # AI Chat dashboard
-│   │   └── products/
-│   │       └── page.tsx          # Products catalog
+│   │   ├── layout.tsx               # Root layout with providers
+│   │   ├── page.tsx                 # Landing page
+│   │   ├── globals.css              # Global styles & theme
+│   │   ├── favicon.ico
+│   │   │
+│   │   ├── chat/                    # 🤖 AI Chat Interface
+│   │   │   └── page.tsx             # Main chat page with AI assistant
+│   │   │
+│   │   ├── products/                # 🛍️ Products Catalog
+│   │   │   └── page.tsx             # Browse all products
+│   │   │
+│   │   └── interactables/           # Interactive components demo
+│   │       ├── page.tsx
+│   │       └── components/
+│   │           └── settings-panel.tsx
+│   │
 │   ├── components/
-│   │   ├── landing/              # Landing page components
-│   │   ├── dashboard/            # Dashboard components
-│   │   ├── common/               # Shared components
-│   │   ├── tambo/                # AI-renderable components
-│   │   └── ui/                   # Base UI components
-│   ├── context/                  # React Context providers
-│   ├── services/                 # API services
-│   └── lib/                      # Utilities & Tambo config
-├── public/                       # Static assets
-└── ...config files
-
+│   │   ├── common/                  # 🔧 Shared Components
+│   │   │   ├── header.tsx           # Navigation header
+│   │   │   ├── footer.tsx           # Site footer
+│   │   │   └── theme-toggle.tsx     # Dark/light mode toggle
+│   │   │
+│   │   ├── landing/                 # 🏠 Landing Page Components
+│   │   │   ├── hero-section.tsx     # Hero with CTA
+│   │   │   ├── features-section.tsx # Feature highlights
+│   │   │   ├── demo-section.tsx     # Interactive demo
+│   │   │   └── cta-section.tsx      # Call to action
+│   │   │
+│   │   ├── tambo/                   # 🤖 AI-Renderable Components
+│   │   │   ├── product-card.tsx     # Single product display
+│   │   │   ├── product-grid.tsx     # Product grid with filters
+│   │   │   ├── product-filters.tsx  # Filter panel
+│   │   │   ├── product-details.tsx  # Detailed product view
+│   │   │   ├── product-comparison.tsx # Compare products
+│   │   │   ├── cart-widget.tsx      # Shopping cart
+│   │   │   ├── category-list.tsx    # Category navigation
+│   │   │   ├── price-range-slider.tsx # Price filter
+│   │   │   ├── search-results.tsx   # Search results
+│   │   │   ├── quick-stats.tsx      # Product statistics
+│   │   │   ├── message-thread-full.tsx
+│   │   │   ├── message-input.tsx
+│   │   │   ├── message.tsx
+│   │   │   ├── thread-container.tsx
+│   │   │   ├── thread-content.tsx
+│   │   │   ├── thread-history.tsx
+│   │   │   └── scrollable-message-container.tsx
+│   │   │
+│   │   ├── ui/                      # 🎨 Base UI Components
+│   │   │   └── card-data.tsx
+│   │   │
+│   │   └── ApiKeyCheck.tsx          # API key validation
+│   │
+│   ├── context/                     # 📦 React Context Providers
+│   │   ├── theme-provider.tsx       # Theme state management
+│   │   ├── cart-context.tsx         # Shopping cart state
+│   │   └── filter-context.tsx       # Filter state management
+│   │
+│   ├── services/                    # 🌐 API Services
+│   │   ├── fakestore-api.ts         # FakeStore API integration
+│   │   ├── types.ts                 # TypeScript interfaces
+│   │   └── population-stats.ts      # Stats utilities
+│   │
+│   └── lib/                         # 🛠️ Utilities
+│       ├── tambo.ts                 # Tambo AI configuration
+│       ├── thread-hooks.ts          # Custom hooks for threads
+│       └── utils.ts                 # Helper functions
+│
+├── .env.local                       # Environment variables
+├── tailwind.config.ts               # Tailwind configuration
+├── next.config.ts                   # Next.js configuration
+├── tsconfig.json                    # TypeScript configuration
+├── package.json                     # Dependencies
+└── README.md                        # Documentation
 
 
 ---
@@ -99,7 +159,7 @@ shopflow/
 ## 📦 Installation
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 15+ 
 - npm or yarn
 - Tambo API key
 
@@ -124,16 +184,30 @@ npm run dev
 Example Queries
 text
 
-"Show me all electronics"
-"Find products under $50"
-"I need a men's jacket with good ratings"
-"Compare the top-rated jewelry items"
-"Add the cheapest laptop to my cart"
+💬 "Show me all electronics"
+💬 "Find products under $50"
+💬 "I need a men's jacket with good ratings"
+💬 "Compare the top-rated jewelry items"
+💬 "Add the cheapest laptop to my cart"
+💬 "What's the average price of women's clothing?"
+💬 "Show me the best-rated products"
 
 🤝 Contributing
-We welcome contributions! Please see our Contributing Guide for details.
+We welcome contributions! Please follow these steps:
+
+Fork the repository
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
 🙏 Acknowledgments
+<div align="center">
+Special Thanks To
+<a href="https://www.wemakedevs.org/"> <img src="https://www.wemakedevs.org/images/logo.png" alt="We Make Devs" width="200"/> </a>
+We Make Devs - For fostering an amazing developer community and providing opportunities to learn and grow! 🚀
+
+</div>
 Tambo AI for the incredible AI platform
 FakeStore API for product data
 Lucide for beautiful icons
