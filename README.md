@@ -1,6 +1,7 @@
 # 🛍️ ShopFlow - AI-Powered E-Commerce Experience
 
-# live - [shopflow-uizard.vercel.app]
+# 🔗 Live: [shopflow-uizard.vercel.app](https://shopflow-uizard.vercel.app)
+
 <div align="center">
   <!-- <img src="public/shopflow-banner.svg" alt="ShopFlow Banner" width="600"/> -->
   
