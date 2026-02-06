@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RotateCcw, Shield, Truck, ChevronRight, HelpCircle } from "lucide-react";
-import { Card } from "@/components/ui/Card";
+import { Card } from "@/components/ui/card";
 
 interface PolicyCardProps {
   policyType?: "returns" | "warranty" | "shipping";

@@ -4,7 +4,7 @@ import React from "react";
 import { Star, User, CheckCircle, ThumbsUp, MessageSquare } from "lucide-react";
 import { useShopStore } from "@/store/useShopStore";
 import { getReviewsForProduct, getAggregatedStats } from "@/data/mockReviews";
-import { Card } from "@/components/ui/Card";
+import { Card } from "@/components/ui/card";
 
 interface ReviewCardProps {
   productId?: number;
